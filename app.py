@@ -22,7 +22,7 @@ class all_users(Resource):
             res = con.fetchall()
             return res
 
-        except Exception as e:
+        except:
             return {"message": "Failed to select user"}, 400
 
         finally:
@@ -40,7 +40,7 @@ class all_users(Resource):
             mysql.connection.commit()
             return {"message": 'User added successfully.'}, 200
 
-        except Exception as e:
+        except:
             return {"message": "Failed to add user"}, 400
 
         finally:
@@ -59,7 +59,7 @@ class user(Resource):
             res = con.fetchall()
             return res
 
-        except Exception as e:
+        except:
             return {"message": "Failed to fetch the user"}, 400
 
         finally:
@@ -77,7 +77,7 @@ class user(Resource):
             mysql.connection.commit()
             return {"message": "successfully updated the user"}, 200
 
-        except Exception as e:
+        except:
             return {"message": "Failed to update user"}, 400
 
         finally:
@@ -91,7 +91,7 @@ class user(Resource):
             mysql.connection.commit()
             return {"message": "successfully deleted the user"}
 
-        except Exception as e:
+        except:
             return {"message": "Failed to delete user"}, 400
 
         finally:
